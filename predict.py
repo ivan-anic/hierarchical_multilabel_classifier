@@ -8,7 +8,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 
 import metrics
-from utils import label_ids_to_labels, prep_df_for_trainnnn
+from utils import label_ids_to_labels, prep_df_for_train
 
 
 def predict(features, stage, dataframe_path, ch_path, hmc_path):
@@ -35,7 +35,7 @@ def predict(features, stage, dataframe_path, ch_path, hmc_path):
     df = pd.read_pickle(dataframe_path)
     topics = list(df)[5:]
 
-    df, y = prep_df_for_trainnnn(df, None)
+    df, y = prep_df_for_train(df, None)
     print(y.shape)
     print(df.info())
 
